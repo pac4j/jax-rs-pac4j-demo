@@ -90,20 +90,23 @@ if [ "$CAS_TEST_PASSED" = true ]; then
     CAS_POST_FINAL_URL=$(echo "$CAS_POST_RESPONSE" | grep "FINAL_URL:" | cut -d: -f2-)
     echo "🌐 After login redirect URL: $CAS_POST_FINAL_URL"
 
-    # Follow to final page (should end up at /cas/index)
-    FINAL_META=$(curl -s -c "$COOKIE_JAR" -b "$COOKIE_JAR" -L -o "$FINAL_APP_PAGE" -w "FINAL_URL:%{url_effective}\nHTTP_CODE:%{http_code}" "$CAS_POST_FINAL_URL")
+    # After successful CAS login, navigate to a CAS-protected page to verify identity
+    TARGET_URL="http://localhost:8080/cas/index"
+    FINAL_META=$(curl -s -c "$COOKIE_JAR" -b "$COOKIE_JAR" -L -o "$FINAL_APP_PAGE" -w "FINAL_URL:%{url_effective}\nHTTP_CODE:%{http_code}" "$TARGET_URL")
     FINAL_APP_CODE=$(echo "$FINAL_META" | grep "HTTP_CODE:" | cut -d: -f2)
 
     if [ "$FINAL_APP_CODE" = "200" ]; then
       echo "✅ Demo reachable after CAS login (HTTP 200)"
-      CAS_AUTH_PASSED=true
       if grep -q "leleuj@gmail.com" "$FINAL_APP_PAGE"; then
         echo "✅ Authenticated identity found in final page"
+        CAS_AUTH_PASSED=true
       else
-        echo "⚠️ Authenticated identity not found, but page loaded"
+        echo "❌ Authenticated identity not found in protected page"
+        CAS_AUTH_PASSED=false
       fi
     else
       echo "❌ Demo not reachable after CAS login (HTTP $FINAL_APP_CODE)"
+      CAS_AUTH_PASSED=false
     fi
   fi
 fi
