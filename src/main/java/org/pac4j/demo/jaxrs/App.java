@@ -33,7 +33,7 @@ public class App {
         final var basicClient = new IndirectBasicAuthClient(authenticator);
 
         // CAS configuration (same as other demos)
-        final var casConfig = new CasConfiguration("https://casserverpac4j.herokuapp.com/login");
+        final var casConfig = new CasConfiguration("https://www.casserverpac4j.dev/login");
         final var casClient = new CasClient(casConfig);
 
         final var clients = new Clients(baseUrl + "/callback", formClient, basicClient, casClient, new AnonymousClient());
