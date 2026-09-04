@@ -11,7 +11,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jersey.version>3.1.12</jersey.version>
+    <jersey.version>4.0.2</jersey.version>
     <jaxrs.pac4j.version>7.0.0</jaxrs.pac4j.version>
     <pac4j.version>6.5.7</pac4j.version>
   </properties>
