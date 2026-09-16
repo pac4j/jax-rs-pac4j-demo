@@ -5,7 +5,7 @@ A minimal JAX-RS (Jersey 3 on Grizzly) demo showcasing authentication with jax-r
 - Form login (FormClient)
 - CAS (CasClient)
 
-It uses jax-rs-pac4j v7.0.1-SNAPSHOT and pac4j 6.x.
+It uses jax-rs-pac4j v7.0.0 and pac4j v6.5.x.
 
 ## Prerequisites
 - JDK 17+
@@ -18,13 +18,13 @@ mvn -q clean package
 ```
 
 ## Run
-- Quick launcher (installs local jax-rs-pac4j if needed):
+- Quick launcher (builds and starts the demo):
 ```bash
 ./run.sh
 ```
 - Or run the fat JAR directly:
 ```bash
-java -jar target/jax-rs-pac4j-demo-1.0.0-SNAPSHOT.jar
+java -jar target/jax-rs-pac4j-demo-7.0.0-SNAPSHOT.jar
 ```
 The server starts on http://localhost:8080
 

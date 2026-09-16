@@ -9,17 +9,20 @@ cd ..
 
 mkdir -p target
 
-# Ensure local jax-rs-pac4j SNAPSHOT is installed (in case not in local repo)
-echo "📦 Installing local jax-rs-pac4j if needed..."
-mvn -q -f ../jax-rs-pac4j/pom.xml -DskipTests install || true
-
 # Build demo
 echo "📦 Building jax-rs-pac4j-demo..."
 mvn -q clean package
 
+# Locate the shaded jar (version-independent)
+JAR=$(ls target/jax-rs-pac4j-demo-*.jar | head -n1)
+if [ -z "$JAR" ]; then
+  echo "❌ Shaded jar not found in target/"
+  exit 1
+fi
+
 # Start server
-echo "🌐 Starting server..."
-java -jar target/jax-rs-pac4j-demo-1.0.0-SNAPSHOT.jar > target/server.log 2>&1 &
+echo "🌐 Starting server ($JAR)..."
+java -jar "$JAR" > target/server.log 2>&1 &
 SERVER_PID=$!
 
 # Wait for server to start (max 60s)

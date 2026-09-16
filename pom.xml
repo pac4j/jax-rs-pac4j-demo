@@ -4,7 +4,7 @@
 
   <groupId>org.pac4j.demo</groupId>
   <artifactId>jax-rs-pac4j-demo</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>7.0.0-SNAPSHOT</version>
   <name>jax-rs-pac4j-demo</name>
   <description>Demo JAX-RS app using jax-rs-pac4j with BasicAuth, Form login, and CAS</description>
   <properties>
