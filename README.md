@@ -5,7 +5,7 @@ A minimal JAX-RS (Jersey 3 on Grizzly) demo showcasing authentication with jax-r
 - Form login (FormClient)
 - CAS (CasClient)
 
-It uses jax-rs-pac4j v7.0.0 and pac4j v6.5.x.
+It uses jax-rs-pac4j v7.x and pac4j v6.x.
 
 ## Prerequisites
 - JDK 17+
