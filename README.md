@@ -1,5 +1,8 @@
 # jax-rs-pac4j-demo
 
+> This demo secures a JAX-RS application with **[jax-rs-pac4j](https://github.com/pac4j/jax-rs-pac4j)**, the JAX-RS implementation of **[pac4j](https://github.com/pac4j/pac4j)**, the security engine for Java.
+> If it is useful to you, please ⭐ **[star pac4j on GitHub](https://github.com/pac4j/pac4j)**: it helps other developers discover it!
+
 A minimal JAX-RS (Jersey 3 on Grizzly) demo showcasing authentication with jax-rs-pac4j and pac4j:
 - Indirect Basic Auth (IndirectBasicAuthClient)
 - Form login (FormClient)
