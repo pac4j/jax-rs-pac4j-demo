@@ -8,7 +8,9 @@ A minimal JAX-RS (Jersey 3 on Grizzly) demo showcasing authentication with jax-r
 - Form login (FormClient)
 - CAS (CasClient)
 
-It uses jax-rs-pac4j v7.x and pac4j v6.x.
+It uses jax-rs-pac4j v8.1 (`jersey3-pac4j`) and pac4j v6.x.
+
+To secure a JAX-RS application with OpenID Connect, on Jersey 3 or 4, RESTEasy or Dropwizard, or to protect a REST API with bearer tokens, see the guide [How to secure a JAX-RS application with OIDC](https://www.pac4j.org/how-to-secure-a-jax-rs-application-with-oidc.html).
 
 ## Prerequisites
 - JDK 17+
@@ -27,7 +29,7 @@ mvn -q clean package
 ```
 - Or run the fat JAR directly:
 ```bash
-java -jar target/jax-rs-pac4j-demo-8.1.0-SNAPSHOT.jar
+java -jar target/jax-rs-pac4j-demo-*.jar
 ```
 The server starts on http://localhost:8080
 
