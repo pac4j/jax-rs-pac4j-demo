@@ -27,7 +27,7 @@ mvn -q clean package
 ```
 - Or run the fat JAR directly:
 ```bash
-java -jar target/jax-rs-pac4j-demo-7.0.0-SNAPSHOT.jar
+java -jar target/jax-rs-pac4j-demo-8.1.0-SNAPSHOT.jar
 ```
 The server starts on http://localhost:8080
 
